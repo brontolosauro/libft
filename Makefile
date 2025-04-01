@@ -10,7 +10,11 @@ SRC =	ft_strlen.c ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isprint.c \
 		ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 		ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
 		ft_lstmap.c \
-		get_next_line.c
+		get_next_line.c \
+		ft_printf.c ft_vprintf.c ft_parse_convspec.c ft_print_arg.c \
+		ft_conv_char.c ft_conv_str.c ft_conv_ptr.c ft_conv_int.c \
+		ft_conv_uint.c ft_conv_hex.c ft_conv_chex.c ft_conv_percent.c \
+		ft_uitoa.c ft_xitoa.c ft_lxitoa.c
 		
 OBJ = $(SRC:%.c=%.o)
 

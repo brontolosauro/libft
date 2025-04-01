@@ -13,12 +13,18 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
+# include <stdarg.h>
 
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }	t_list;
+typedef struct s_arg
+{
+	char	*content;
+	int		length;
+}	t_arg;
 size_t	ft_strlen(const char *s);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -63,5 +69,20 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 char	*get_next_line(int fd);
+int		ft_printf(const char *format, ...);
+int		ft_vprintf(const char *format, va_list args);
+t_arg	ft_parse_convspec(const char **format, va_list args);
+int		ft_print_arg(t_arg arg);
+t_arg	ft_conv_char(va_list args);
+t_arg	ft_conv_str(va_list args);
+t_arg	ft_conv_ptr(va_list args);
+t_arg	ft_conv_int(va_list args);
+t_arg	ft_conv_uint(va_list args);
+t_arg	ft_conv_hex(va_list args);
+t_arg	ft_conv_chex(va_list args);
+t_arg	ft_conv_percent(void);
+char	*ft_uitoa(unsigned int n);
+char	*ft_xitoa(unsigned int n);
+char	*ft_lxitoa(unsigned long int n);
 
 #endif
